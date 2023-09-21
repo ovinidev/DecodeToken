@@ -1,7 +1,8 @@
 "use client";
 import { decodeToken } from "@/utils/decodeToken";
 import { useState } from "react";
-import ReactJson from "react-json-view";
+import dynamic from "next/dynamic";
+const ReactJson = dynamic(() => import("react-json-view"), { ssr: false });
 
 export default function Home() {
   const [token, setToken] = useState({
