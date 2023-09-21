@@ -18,6 +18,7 @@ export default function Home() {
       jwt: token.jwt,
     });
   }
+
   return (
     <main className="bg-slate-900 min-h-screen flex items-center justify-center">
       <section className="flex flex-col items-center space-y-6 w-4/5 sm:w-[50rem]">

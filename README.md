@@ -1,36 +1,33 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Decode token
 
-## Getting Started
+<p align="center">
 
-First, run the development server:
+## 💡 Tecnologias
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Tecnologias utilizada no projeto:
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+<img height="60" title="Next" alt="Next" src="https://camo.githubusercontent.com/92ec9eb7eeab7db4f5919e3205918918c42e6772562afb4112a2909c1aaaa875/68747470733a2f2f6173736574732e76657263656c2e636f6d2f696d6167652f75706c6f61642f76313630373535343338352f7265706f7369746f726965732f6e6578742d6a732f6e6578742d6c6f676f2e706e67"> &nbsp;
+&nbsp;
+<img src="https://cdn.iconscout.com/icon/free/png-512/typescript-1174965.png" alt="imagem" width="60">&nbsp;
+&nbsp;
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg" alt="imagem" width="60">&nbsp;
+&nbsp;
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🚀 Como executar
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- Clone o repositório
+- Instale as dependências com `pnpm install`
+- Inicie o servidor com `pnpm dev`
 
-## Learn More
+Agora você pode acessar [`localhost:3000`](http://localhost:3000) do seu
+navegador.
 
-To learn more about Next.js, take a look at the following resources:
+## 👨‍💻 Funcionalidades
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+A aplicação oferece as seguintes funcionalidades:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+### Decodificar token jwt
 
-## Deploy on Vercel
+Aqui conseguimos decodificar tokens jwt e extrair suas informações.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+<sub>Made with 💜 by <a href="https://github.com/ovinidev">Vinícius Medeiros</a></sub>
