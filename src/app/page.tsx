@@ -1,8 +1,8 @@
 "use client";
-import { decodeToken } from "@/utils/decodeToken";
-import { useState } from "react";
-import dynamic from "next/dynamic";
-const ReactJson = dynamic(() => import("react-json-view"), { ssr: false });
+import { decodeToken } from "@utils/decodeToken";
+import { ChangeEvent, useState } from "react";
+import { ReactJson } from "@components/ReactJson";
+import { TextArea } from "@components/TextArea";
 
 export default function Home() {
   const [token, setToken] = useState({
@@ -21,41 +21,29 @@ export default function Home() {
     }
   }
 
-  return (
-    <main className="bg-slate-900 min-h-screen flex items-center justify-center">
-      <section className="flex flex-col items-center space-y-6 w-4/5 sm:w-[50rem]">
-        <h1 className="text-zinc-50 text-4xl font-semibold">Decode Token</h1>
+  function handleChangeToken(e: ChangeEvent<HTMLTextAreaElement>) {
+    setToken({
+      jwt: e.target.value,
+      decoded: token.decoded,
+    });
+  }
 
-        <textarea
-          onChange={(e) =>
-            setToken({
-              jwt: e.target.value,
-              decoded: token.decoded,
-            })
-          }
-          placeholder="Insira o token aqui"
-          className="resize-none bg-slate-100 text-slate-900 placeholder:text-slate-600 w-full p-1 h-44 sm:w-[32rem] sm:h-[15rem]"
-        />
+  return (
+    <main className="flex min-h-screen items-center justify-center bg-slate-900">
+      <section className="flex w-full flex-col items-center space-y-6 px-8 sm:w-min">
+        <h1 className="text-4xl font-semibold text-zinc-50">Decode Token</h1>
+
+        <TextArea onChangeToken={handleChangeToken} />
 
         <button
           onClick={handleDecodeToken}
-          className="text-slate-50 self-center rounded-md bg-pink-600 px-4 py-2"
+          className="self-center rounded-md bg-pink-600 px-4 py-2 text-slate-50"
           type="button"
         >
           Decode
         </button>
 
-        <div className="w-full sm:w-[30rem]">
-          <ReactJson
-            src={token.decoded}
-            theme="bright"
-            name={false}
-            iconStyle="circle"
-            displayDataTypes={false}
-            collapsed={1}
-            style={{ width: "100%" }}
-          />
-        </div>
+        <ReactJson token={token.decoded} />
       </section>
     </main>
   );
