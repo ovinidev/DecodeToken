@@ -1,4 +1,4 @@
-export function decodeToken(token: string): Object {
+export function decodeToken(token: string): object {
   const jwt = token.split(".")[1];
 
   const jsonPayload = decodeURIComponent(
@@ -8,7 +8,7 @@ export function decodeToken(token: string): Object {
       .map(function (c) {
         return "%" + ("00" + c.charCodeAt(0).toString(16)).slice(-2);
       })
-      .join("")
+      .join(""),
   );
 
   return JSON.parse(jsonPayload);
