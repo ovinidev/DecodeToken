@@ -14,7 +14,7 @@ export function ReactJson({ token }: ReactJsonProps) {
       iconStyle="circle"
       displayDataTypes={false}
       collapsed={1}
-      style={{ width: "100%" }}
+      style={{ width: "100%", fontSize: "1rem" }}
     />
   );
 }

@@ -14,22 +14,26 @@ export default function Home() {
     if (token.jwt) {
       const decodedToken = decodeToken(token.jwt);
 
-      setToken({
-        decoded: decodedToken,
-        jwt: token.jwt,
+      setToken((prevState) => {
+        return {
+          ...prevState,
+          decoded: decodedToken,
+        };
       });
     }
   }
 
   function handleChangeToken(e: ChangeEvent<HTMLTextAreaElement>) {
-    setToken({
-      jwt: e.target.value,
-      decoded: token.decoded,
+    setToken((prevState) => {
+      return {
+        ...prevState,
+        jwt: e.target.value,
+      };
     });
   }
 
   return (
-    <main className="flex min-h-screen items-center justify-center bg-slate-900">
+    <main className="flex min-h-screen items-center justify-center bg-slate-900 py-12">
       <section className="flex w-full flex-col items-center space-y-6 px-8 sm:w-min">
         <h1 className="text-4xl font-semibold text-zinc-50">Decode Token</h1>
 
